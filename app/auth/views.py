@@ -67,7 +67,7 @@ def before_request():
             and not current_user.confirmed \
             and request.blueprint != 'auth' \
             and request.endpoint != 'static':
-        return redirect(url_for('auth.uncorfirmed'))
+        return redirect(url_for('auth.unconfirmed'))
 
 
 @auth.route('/unconfirmed')

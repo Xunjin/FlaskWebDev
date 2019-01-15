@@ -75,7 +75,7 @@ class User(UserMixin, db.Model):
             s = Serializer(current_app.config['SECRET_KEY'], expiration)
             return s.dumps(
                 {'change_email': self.id, 'new_email': new_email}).decode('utf-8')
-        
+
         def change_email(self, token):
             s = Serializer(current_app.config['SECRET_KEY'])
             try:

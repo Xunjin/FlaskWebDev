@@ -82,7 +82,7 @@ class UserModelTestCase(unittest.TestCase):
         token = u.generate_email_change_token('susan@example.org')
         self.assertTrue(u.change_email(token))
         self.assertTrue(u.email == 'susan@example.org')
-    
+
     def test_invalid_email_change_token(self):
         u1 = User(email='john@example.com', password='cat')
         u2 = User(email='susan@example.org', password='dog')
